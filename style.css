@@ -1,0 +1,110 @@
+*{  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: #6D6F7F;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main {
+  width: 360px;
+  padding: 10px 0px;
+  background: #E5E6F1;
+  display:flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+}
+.main .head {
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.head .count {
+  height: 100%;
+  padding: 4px 0px;
+  display: flex;
+  flex-direction: column;
+}
+.indicat {
+  font-size: 25px;
+  font-family: serif;
+  border-bottom: 2px dashed black;
+  background: linear-gradient(45deg,red,#855FFF,red);
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 700;
+}
+.head .btn {
+  padding: 10px 10px;
+  font-size: 14px;
+  font-family: serif;
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background: #B9B9C4;
+  border-radius: 5px;
+}
+.main ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  height: 100%;
+  width: 100%;
+  perspective: 400px;
+  gap: 5px;
+}
+.main ul li {
+  height: 130px;
+  width: 100%;
+  position: relative;
+  transition: 1s;
+  list-style: none;
+  transform-style: preserve-3d;
+  border-radius: 5px;
+  transition: transform 0.5s;
+}
+.back, .front{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  font-size: 50px;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: serif;
+}
+.front {
+  /* Make your country flag with conic-gradient */
+  background-image: conic-gradient(from 180deg, red 0deg,red 140deg,blue 140deg,blue 220deg,green 220deg,green 360deg);
+  color: white;
+  z-index: 100;
+  backface-visibility: hidden;
+}
+.front::before {
+  content: "★";
+  height: 30px;
+  width: 30px;
+  font-size: 30px;
+  color: white;
+  position: absolute;
+  top: 0px;
+}
+.back {
+  transform: rotateY(-180deg);
+  background: #AE88F2;
+}
+.flip {
+  transform: rotateY(180deg);
+  pointer-events: none;
+}
+.dis {
+  pointer-events: none;
+} 
